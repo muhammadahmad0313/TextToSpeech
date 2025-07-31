@@ -1,13 +1,26 @@
 using System.Runtime.InteropServices;
 using UnityEngine;
-using UI = UnityEngine.UI;
+using UnityEngine.UI;
 
 sealed class TextToSpeech : MonoBehaviour
 {
-    [SerializeField] UI.Text _text = null;
 
-    public void StartSpeech()
-      => ttsrust_say(_text.text);
+    public static TextToSpeech instance { get; private set; }
+
+    void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+   public void SpeakText(string text) => ttsrust_say(text);
+   public void SpeakText(Text text) => ttsrust_say(text.text);
+
 
     #if !UNITY_EDITOR && (UNITY_IOS || UNITY_WEBGL)
     const string _dll = "__Internal";
