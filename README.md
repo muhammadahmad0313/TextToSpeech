@@ -8,17 +8,17 @@ A simple Unity project for text-to-speech functionality.
 
    ```bash
    git clone https://github.com/muhammadahmad0313/TextToSpeech.git
-````
+```
 
 2. **Open in Unity**
 
-   * Launch Unity Hub.
-   * Click **Add**, then select the cloned project folder.
+    Launch Unity Hub.
+    Click **Add**, then select the cloned project folder.
 
 3. **Run the Scene**
 
-   * In the **Assets** folder, open the `TextToSpeech` scene.
-   * Click **Play** to test it.
+    In the **Assets** folder, open the `TextToSpeech` scene.
+    Click **Play** to test it.
 
 ## Credits
 
